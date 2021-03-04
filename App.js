@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import HomeScreen from "./containers/HomeScreen.js";
+import ProductScreen from "./containers/ProductScreen.js";
 import ProductsScreen from "./containers/ProductsScreen.js";
 import ScanScreen from "./containers/ScanScreen.js";
 
@@ -17,7 +18,6 @@ function App() {
         <Stack.Screen
           name="Tab"
           options={{
-            animationEnabled: false,
             headerShown: false
           }}
         >
@@ -71,18 +71,13 @@ function App() {
             </Tab.Navigator>
           )}
         </Stack.Screen>
+        <Stack.Screen
+          name="ProductScreen"
+          component={ProductScreen}
+        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
 export default App;
-
-/* const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-}); */

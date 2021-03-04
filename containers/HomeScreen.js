@@ -4,7 +4,7 @@ import styles from "./../assets/css/styles";
 
 const HomeScreen = () => {
   return (
-    <View style={[styles.container, styles.bg_main]}>
+    <View style={[styles.view__center, styles.bg_main]}>
       <Text>HomeScreen</Text>
     </View>
   );

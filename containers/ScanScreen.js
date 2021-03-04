@@ -1,10 +1,11 @@
-import axios from "axios";
+import { useNavigation } from "@react-navigation/core";
 import { BarCodeScanner } from "expo-barcode-scanner";
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import styles from "./../assets/css/styles";
 
 const ScanScreen = () => {
+  const navigation = useNavigation();
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
 
@@ -17,14 +18,7 @@ const ScanScreen = () => {
 
   const handleBarCodeScanned = async ({ type, data }) => {
     setScanned(true);
-    try {
-      const response = await axios.get(
-        `https://world.openfoodfacts.org/api/v0/product/${data}.json`
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
+    navigation.navigate("ProductScreen", { productCode: data });
   };
 
   if (hasPermission === null) {
@@ -48,21 +42,19 @@ const ScanScreen = () => {
   }
 
   return (
-    <View style={styles.bg_main}>
-      <View style={styles.view__end}>
-        <BarCodeScanner
-          onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-          style={StyleSheet.absoluteFill}
-        />
-        {scanned && (
-          <TouchableHighlight
-            onPress={() => setScanned(false)}
-            style={styles.button}
-          >
-            <Text style={styles.button_text}>Scanner un autre code</Text>
-          </TouchableHighlight>
-        )}
-      </View>
+    <View style={[styles.view__end, styles.bg_main]}>
+      <BarCodeScanner
+        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+        style={StyleSheet.absoluteFill}
+      />
+      {scanned && (
+        <TouchableHighlight
+          onPress={() => setScanned(false)}
+          style={styles.button}
+        >
+          <Text style={styles.button_text}>Scanner un autre code</Text>
+        </TouchableHighlight>
+      )}
     </View>
   );
 };
