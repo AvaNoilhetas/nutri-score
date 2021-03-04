@@ -1,13 +1,13 @@
 import React from "react";
 import { ScrollView, Text } from "react-native";
-import styles from "./../assets/css/styles";
+import styles from "../assets/css/styles";
 
-const ProductsScreen = () => {
+const ProductsListScreen = () => {
   return (
     <ScrollView style={[styles.container, styles.bg_main]}>
-      <Text>ProductsScreen</Text>
+      <Text>ProductsListScreen</Text>
     </ScrollView>
   );
 };
 
-export default ProductsScreen;
+export default ProductsListScreen;

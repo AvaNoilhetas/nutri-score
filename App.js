@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import HomeScreen from "./containers/HomeScreen.js";
 import ProductScreen from "./containers/ProductScreen.js";
-import ProductsScreen from "./containers/ProductsScreen.js";
+import ProductsListScreen from "./containers/ProductsListScreen.js";
 import ScanScreen from "./containers/ScanScreen.js";
 
 const Tab = createBottomTabNavigator();
@@ -55,10 +55,10 @@ function App() {
                 }}
               />
               <Tab.Screen
-                name="Products"
-                component={ProductsScreen}
+                name="ProductsList"
+                component={ProductsListScreen}
                 options={{
-                  tabBarLabel: "Products",
+                  tabBarLabel: "ProductsList",
                   tabBarIcon: ({ color, size }) => (
                     <MaterialCommunityIcons
                       name="food-variant"
@@ -74,6 +74,9 @@ function App() {
         <Stack.Screen
           name="ProductScreen"
           component={ProductScreen}
+          options={{
+            headerShown: false
+          }}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
