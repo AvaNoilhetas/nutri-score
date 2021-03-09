@@ -1,3 +1,4 @@
+// App.js
 import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -42,7 +43,6 @@ function App() {
               />
               <Tab.Screen
                 name="Scan"
-                component={ScanScreen}
                 options={{
                   tabBarLabel: "Scan",
                   tabBarIcon: ({ color, size }) => (
@@ -53,7 +53,26 @@ function App() {
                     />
                   )
                 }}
-              />
+              >
+                {() => (
+                  <Stack.Navigator>
+                    <Stack.Screen
+                      name="Scan"
+                      component={ScanScreen}
+                      options={{
+                        headerShown: false
+                      }}
+                    ></Stack.Screen>
+                    <Stack.Screen
+                      name="ProductScreen"
+                      component={ProductScreen}
+                      options={{
+                        headerShown: false
+                      }}
+                    ></Stack.Screen>
+                  </Stack.Navigator>
+                )}
+              </Tab.Screen>
               <Tab.Screen
                 name="ProductsList"
                 component={ProductsListScreen}
@@ -71,13 +90,6 @@ function App() {
             </Tab.Navigator>
           )}
         </Stack.Screen>
-        <Stack.Screen
-          name="ProductScreen"
-          component={ProductScreen}
-          options={{
-            headerShown: false
-          }}
-        ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -36,6 +36,11 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
     fontSize: 20
+  },
+  product_image: {
+    width: 80,
+    height: 80,
+    resizeMode: "contain"
   }
 });
 

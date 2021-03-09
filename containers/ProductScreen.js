@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
+import { ActivityIndicator, Image, ScrollView, Text, View } from "react-native";
 import styles from "./../assets/css/styles";
 
 const ProductScreen = ({ route }) => {
@@ -12,8 +12,8 @@ const ProductScreen = ({ route }) => {
       const response = await axios.get(
         `https://world.openfoodfacts.org/api/v0/product/${route.params.productCode}.json`
       );
-      setIsLoading(false);
       setData(response.data);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -24,7 +24,25 @@ const ProductScreen = ({ route }) => {
     </View>
   ) : (
     <View style={[styles.view__center, styles.bg_main]}>
-      <Text>{route.params.productCode}</Text>
+      <ScrollView>
+        <View>
+          <View>
+            <Text>{data.product.product_name_fr}</Text>
+            <Text>{data.product.brands_tags}</Text>
+            <Text>{data.product.product_quantity}g</Text>
+          </View>
+          <View>
+            <View>
+              <Image
+                style={styles.product_image}
+                source={{
+                  uri: data.product.image_thumb_url
+                }}
+              />
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };
