@@ -7,8 +7,6 @@ const ProductCard = props => {
   const navigation = useNavigation();
 
   const goToProductPage = () => {
-    console.log(props.code);
-
     navigation.navigate("Scan", {
       screen: "ProductScreen",
       params: { productCode: props.code }
@@ -29,7 +27,7 @@ const ProductCard = props => {
       <Image
         style={styles.product_image}
         source={{
-          uri: require(`./../assets/img/nutriscore-${props.nutriscoreGrade}.png`)
+          uri: `./../assets/img/nutriscore-${props.nutriscoreGrade}.png`
         }}
       />
     </TouchableOpacity>

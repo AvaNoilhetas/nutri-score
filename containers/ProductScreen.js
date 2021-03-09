@@ -16,7 +16,7 @@ const ProductScreen = ({ route }) => {
       setIsLoading(false);
     };
     fetchData();
-  }, []);
+  }, [route.params.productCode]);
 
   return isLoading ? (
     <View style={styles.view__center}>
