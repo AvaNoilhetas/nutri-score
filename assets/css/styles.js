@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight,
     borderRadius: 50,
-    overflow: "hidden"
+
+    zIndex: -1
   },
   header: {
     paddingBottom: 20,
@@ -60,7 +61,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    alignSelf: "stretch"
+    alignSelf: "stretch",
+    overflow: "hidden"
   },
   text: {
     fontSize: 20,
