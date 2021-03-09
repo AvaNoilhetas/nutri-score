@@ -42,7 +42,7 @@ const ScanScreen = () => {
   }
 
   return (
-    <View style={[styles.view__end, styles.bg_main]}>
+    <View style={[styles.view__end, styles.bg_ternary]}>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={StyleSheet.absoluteFill}

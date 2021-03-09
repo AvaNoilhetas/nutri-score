@@ -1,6 +1,7 @@
+import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Image, Text, TouchableOpacity } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import styles from "./../assets/css/styles";
 
 const ProductCard = props => {
@@ -15,21 +16,33 @@ const ProductCard = props => {
 
   return (
     <TouchableOpacity onPress={goToProductPage}>
-      <Text>{props.name}</Text>
-      <Text>{props.brand}</Text>
-      <Text>{props.quantity}</Text>
-      <Image
-        style={styles.product_image}
-        source={{
-          uri: props.image
-        }}
-      />
-      <Image
-        style={styles.product_image}
-        source={{
-          uri: `./../assets/img/nutriscore-${props.nutriscoreGrade}.png`
-        }}
-      />
+      <View style={styles.card}>
+        <View style={styles.card_part__left}>
+          <View
+            style={[styles.card_container_image, styles[props.nutriscoreGrade]]}
+          >
+            <Image
+              style={styles.card_image}
+              source={{
+                uri: props.image
+              }}
+            />
+          </View>
+          <View style={styles.card_container_text}>
+            <Text style={styles.card_title}>{props.name}</Text>
+            <Text style={styles.card_text}>Marque : {props.brand}</Text>
+            <Text style={styles.card_text}>Quantité : {props.quantity}</Text>
+          </View>
+        </View>
+        <View>
+          <AntDesign
+            style={styles.card_arrow}
+            name="right"
+            size={15}
+            color="#124660"
+          />
+        </View>
+      </View>
     </TouchableOpacity>
   );
 };
