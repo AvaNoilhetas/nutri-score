@@ -27,6 +27,13 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "flex-end"
   },
+  view__scan: {
+    position: "absolute",
+    width: windowWidth,
+    height: windowHeight,
+    borderRadius: 50,
+    overflow: "hidden"
+  },
   header: {
     paddingBottom: 20,
     paddingTop: Constants.statusBarHeight + 20,

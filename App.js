@@ -56,14 +56,31 @@ const App = () => {
               >
                 <Tab.Screen
                   name="Home"
-                  component={HomeScreen}
                   options={{
                     tabBarLabel: "Home",
                     tabBarIcon: ({ color, size }) => (
                       <Octicons name="home" color={color} size={size} />
                     )
                   }}
-                />
+                >
+                  {() => (
+                    <Stack.Navigator>
+                      <Stack.Screen
+                        name="Home"
+                        component={HomeScreen}
+                        options={{
+                          header: () => (
+                            <View style={styles.header}>
+                              <Text style={styles.header_text}>
+                                Open food fact App
+                              </Text>
+                            </View>
+                          )
+                        }}
+                      ></Stack.Screen>
+                    </Stack.Navigator>
+                  )}
+                </Tab.Screen>
                 <Tab.Screen
                   name="Scan"
                   options={{
@@ -83,7 +100,13 @@ const App = () => {
                         name="Scan"
                         component={ScanScreen}
                         options={{
-                          headerShown: false
+                          header: () => (
+                            <View style={styles.header}>
+                              <Text style={styles.header_text}>
+                                Scanner un code barre
+                              </Text>
+                            </View>
+                          )
                         }}
                       ></Stack.Screen>
                       <Stack.Screen
