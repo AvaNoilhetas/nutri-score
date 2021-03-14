@@ -18,14 +18,12 @@ const ProductCard = props => {
     <TouchableOpacity onPress={goToProductPage}>
       <View style={styles.card}>
         <View style={styles.card_part__left}>
-          <View style={[styles.card_container_image]}>
-            <Image
-              style={styles.card_image}
-              source={{
-                uri: props.image
-              }}
-            />
-          </View>
+          <Image
+            style={styles.card_image}
+            source={{
+              uri: props.image
+            }}
+          />
           <View style={styles.card_container_text}>
             <Text style={styles.card_title}>{props.name}</Text>
             <Text style={styles.card_text}>Marque : {props.brand}</Text>
@@ -47,14 +45,12 @@ const ProductCard = props => {
             </View>
           </View>
         </View>
-        <View>
-          <AntDesign
-            style={styles.card_arrow}
-            name="right"
-            size={15}
-            color="#124660"
-          />
-        </View>
+        <AntDesign
+          style={styles.card_arrow}
+          name="arrowright"
+          size={20}
+          color="#00917c"
+        />
       </View>
     </TouchableOpacity>
   );

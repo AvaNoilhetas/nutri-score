@@ -32,8 +32,11 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight,
     borderRadius: 50,
-
     zIndex: -1
+  },
+  view__product: {
+    flex: 1,
+    flexDirection: "row"
   },
   header: {
     paddingBottom: 20,
@@ -56,6 +59,7 @@ const styles = StyleSheet.create({
   },
   bg_wave: {
     backgroundColor: "white",
+    borderTopRightRadius: 40,
     borderTopLeftRadius: 40,
     flex: 1,
     flexDirection: "column",
@@ -94,26 +98,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    paddingTop: 25,
     flex: 1,
-    paddingLeft: 40
+    marginTop: 20,
+    marginRight: 20,
+    marginLeft: 20,
+    paddingBottom: 20,
+    borderBottomColor: secondaryColor,
+    borderBottomWidth: 1
   },
   card_part__left: {
     flexDirection: "row",
     flexShrink: 1
   },
-  card_container_image: {
-    height: 90,
-    width: 90,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    marginRight: 20
-  },
   card_image: {
     width: 80,
     height: 80,
-    resizeMode: "contain"
+    resizeMode: "contain",
+    marginRight: 10
   },
   card_container_text: {
     flexDirection: "column",
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
   card_title: {
     fontSize: 15,
     fontFamily: "Ubuntu_500Medium",
-    color: darkColor,
+    color: mainColor,
     paddingBottom: 8
   },
   card_text: {
@@ -136,7 +137,7 @@ const styles = StyleSheet.create({
   },
   card_arrow: {
     textAlign: "right",
-    paddingRight: 20
+    paddingRight: 10
   },
   a_color: {
     color: "#1B9476"
@@ -152,6 +153,15 @@ const styles = StyleSheet.create({
   },
   e_color: {
     color: "#D74728"
+  },
+  menu: {
+    flexDirection: "column",
+    justifyContent: "space-around",
+    height: windowHeight - 150
+  },
+  menu_text: {
+    textAlign: "center",
+    transform: [{ rotate: "-90deg" }]
   }
 });
 
