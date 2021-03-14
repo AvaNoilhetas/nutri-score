@@ -1,11 +1,11 @@
 import Constants from "expo-constants";
 import { Dimensions, StyleSheet } from "react-native";
 
-const mainColor = "#1B9476";
+const mainColor = "#00917c";
 const secondaryColor = "#8BD59E";
 const ternaryColor = "#C7DBC2";
 const lightColor = "#F4EBD6";
-const darkColor = "#124660";
+const darkColor = "#6e7c7c";
 const grayColor = "#666666";
 
 const windowWidth = Dimensions.get("window").width;
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    paddingTop: 20,
+    paddingTop: 25,
     flex: 1,
     paddingLeft: 40
   },
@@ -103,18 +103,16 @@ const styles = StyleSheet.create({
     flexShrink: 1
   },
   card_container_image: {
-    backgroundColor: ternaryColor,
-    borderRadius: 20,
-    height: 80,
-    width: 80,
+    height: 90,
+    width: 90,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     marginRight: 20
   },
   card_image: {
-    width: 70,
-    height: 70,
+    width: 80,
+    height: 80,
     resizeMode: "contain"
   },
   card_container_text: {
@@ -125,32 +123,35 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: "Ubuntu_500Medium",
     color: darkColor,
-    paddingBottom: 10
+    paddingBottom: 8
   },
   card_text: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: "Ubuntu_300Light",
     color: grayColor,
-    paddingBottom: 5
+    paddingBottom: 4
+  },
+  card_text__strong: {
+    fontWeight: "bold"
   },
   card_arrow: {
     textAlign: "right",
     paddingRight: 20
   },
-  a: {
-    backgroundColor: "#1B9476"
+  a_color: {
+    color: "#1B9476"
   },
-  b: {
-    backgroundColor: "#8BD59E"
+  b_color: {
+    color: "#8BD59E"
   },
-  c: {
-    backgroundColor: "#FFCA5A"
+  c_color: {
+    color: "#FFCA5A"
   },
-  d: {
-    backgroundColor: "#EE7A46"
+  d_color: {
+    color: "#EE7A46"
   },
-  e: {
-    backgroundColor: "#D74728"
+  e_color: {
+    color: "#D74728"
   }
 });
 

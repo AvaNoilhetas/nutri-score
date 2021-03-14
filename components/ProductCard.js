@@ -18,9 +18,7 @@ const ProductCard = props => {
     <TouchableOpacity onPress={goToProductPage}>
       <View style={styles.card}>
         <View style={styles.card_part__left}>
-          <View
-            style={[styles.card_container_image, styles[props.nutriscoreGrade]]}
-          >
+          <View style={[styles.card_container_image]}>
             <Image
               style={styles.card_image}
               source={{
@@ -32,6 +30,21 @@ const ProductCard = props => {
             <Text style={styles.card_title}>{props.name}</Text>
             <Text style={styles.card_text}>Marque : {props.brand}</Text>
             <Text style={styles.card_text}>Quantité : {props.quantity}</Text>
+            <View>
+              <View style={styles[props.nutriscoreGrade]}></View>
+              <Text style={styles.card_text}>
+                NutirScore :&nbsp;
+                <Text
+                  style={[
+                    styles.card_text,
+                    styles.card_text__strong,
+                    styles[`${props.nutriscoreGrade}_color`]
+                  ]}
+                >
+                  {props.nutriscoreGrade.toUpperCase()}
+                </Text>
+              </Text>
+            </View>
           </View>
         </View>
         <View>

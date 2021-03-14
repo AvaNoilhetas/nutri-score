@@ -113,7 +113,11 @@ const App = () => {
                         name="ProductScreen"
                         component={ProductScreen}
                         options={{
-                          headerShown: false
+                          header: () => (
+                            <View style={styles.header}>
+                              <Text style={styles.header_text}>Produit</Text>
+                            </View>
+                          )
                         }}
                       ></Stack.Screen>
                     </Stack.Navigator>
